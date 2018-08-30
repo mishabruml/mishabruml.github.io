@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Misha Bruml</title>
 
     <style>
-        body{
+        body {
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -17,11 +18,11 @@
             color: white;
         }
 
-        .header h1{
+        .header h1 {
             font-size: 30px;
         }
 
-        .navbar{
+        .navbar {
             overflow: hidden;
             background-color: #557;
         }
@@ -36,65 +37,75 @@
         }
 
         .navbar a:hover {
-            background-color: #9797c9; 
+            background-color: #9797c9;
         }
 
-                /* Style tab links */
+        /* Style tab links */
         .tablink {
-        background-color: #555;
-        color: white;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        font-size: 17px;
-        width: 25%;
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
         }
 
         .tablink:hover {
-        background-color: #777;
+            background-color: #777;
         }
 
         /* Style the tab content (and add height:100% for full page content) */
         .tabcontent {
-        color: white;
-        display: none;
-        padding: 100px 20px;
-        height: 100%;
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
         }
 
-        #Home {background-color: red;}
-        #News {background-color: green;}
-        #Contact {background-color: blue;}
-        #About {background-color: orange;}
+        #Home {
+            background-color: red;
+        }
 
+        #News {
+            background-color: green;
+        }
+
+        #Contact {
+            background-color: blue;
+        }
+
+        #About {
+            background-color: orange;
+        }
     </style>
-    
+
     <script>
-    function openPage(pageName, elmnt, color) {
-        // Hide all elements with class="tabcontent" by default */
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        function openPage(pageName, elmnt, color) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
         }
 
-        // Remove the background color of all tablinks/buttons
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-        }
-
-        // Show the specific tab content
-        document.getElementById(pageName).style.display = "block";
-
-        // Add the specific color to the button used to open the tab content
-        elmnt.style.backgroundColor = color;
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click(); 
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click(); 
     </script>
 
 </head>
@@ -102,36 +113,37 @@
 
 <body>
 
-<div class="header">
-    <h1>Website</h1>
-    <p>A website</p> 
-</div>
+    <div class="header">
+        <h1>Website</h1>
+        <p>A website</p>
+    </div>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('News', this, 'green')">News</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+    <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('News', this, 'green')">News</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
 
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
-</div>
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Home is where the heart is..</p>
+    </div>
 
-<div id="Portfolio" class="tabcontent">
-  <h3>Portfolio</h3>
-  <p>Some stuff that I've written</p>
-  <a href="./counterapp/public/html">Counter App</a>
-</div>
+    <div id="Portfolio" class="tabcontent">
+        <h3>Portfolio</h3>
+        <p>Some stuff that I've written. A small change.</p>
+        <a href="./counterapp/public/html">Counter App</a>
+    </div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
 
-<div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>Who we are and what we do.</p>
-</div> 
+    <div id="About" class="tabcontent">
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
+    </div>
 
 </body>
-</html> 
+
+</html>
